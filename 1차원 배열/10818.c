@@ -1,18 +1,31 @@
 #include <stdio.h>
+int main(void){
+    int a, b;
+    int i =0;
+    int inputvalue;
+    int min = 1000000;
+    int max = -1000000;
+    scanf("%d", &a);
+    
+    inputvalue = a;
+    
+    int numArr[a];
+    
+    for (;a>0;a--,i++){
+        scanf("%d",&b);
+        numArr[i] = b;
+    }
+    a = inputvalue;
 
-int main() {
-    int numArr[5] = {5,7,10,3,2};
-    int min = 1000;
-    int max = -1000;
-    for (int i =0;i<5;i++){
-        if (min>numArr[i]){
-            min=numArr[i];
+    int j = 0;
+    for (;j<a;j++){
+        if(numArr[j]<min){
+            min = numArr[j];
         }
-        if(max<numArr[i]){
-            max=numArr[i];
+        if(numArr[j]>max){
+            max = numArr[j];
         }
     }
-    printf("min= %d\n",min);
-    printf("max= %d\n",max);
+    printf("%d %d",min,max);
     return 0;
 }
